@@ -42,10 +42,12 @@ public class MainDrive {
 		
 		// 사용자가 정답을 맞출때까지 입력받자
 		Scanner myScanner = new Scanner(System.in);
+		int tryCount=0;
 		
 		while(true) {
 			System.out.print("답안 입력: ");
 			int inputNum = myScanner.nextInt();
+			tryCount++;
 			
 			//321 => {3, 2, 1} 처럼 세칸 배열로 분리 / 맞춘 S,B 판정
 			int[] myNumbers = new int[3];
@@ -76,6 +78,7 @@ public class MainDrive {
 			//3S라면, 게임종료
 			if(strikeCount==3) {
 				System.out.println("축하합니다.");
+				System.out.println("시도횟수: "+tryCount);
 				System.out.println("게임을 종료합니다.");
 				break;
 			}
