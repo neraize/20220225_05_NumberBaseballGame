@@ -54,6 +54,25 @@ public class MainDrive {
 			myNumbers[1]=(inputNum / 10) % 10;
 			myNumbers[2]=inputNum % 10;
 			
+			int strikeCount=0;
+			int ballCount=0;
+			
+			for(int i=0; i<myNumbers.length; i++) {
+				for(int j=0; j<cpuNumbers.length; j++) {
+					
+					if(myNumbers[i] == cpuNumbers[j]) {
+						if(i==j) {
+							strikeCount++;
+						}
+						else {
+							ballCount++;
+						}
+					}
+				}
+			}
+			
+			System.out.println("strikeCount: "+strikeCount + ", ballCount: "+ballCount);
+			
 		}
 		
 		
